@@ -1,6 +1,8 @@
 @import "src/components/_settings/_variables";
 
-div#home-page {
+#editor-container {
+  flex-grow: 7;
+  background-color: brown;
   display: flex;
   flex-direction: column;
 }

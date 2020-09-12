@@ -1,0 +1,8 @@
+@import "src/components/_settings/_variables";
+@import "codemirror/lib/codemirror.css";
+@import "codemirror/theme/material.css";
+
+.react-codemirror2,
+.CodeMirror-wrap {
+  height: 100%;
+}
