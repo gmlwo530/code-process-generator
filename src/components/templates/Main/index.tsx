@@ -1,18 +1,22 @@
 import React from "react";
 import "./style.scss";
 
+import MainProvider from "context/MainProvider";
+
 import FramesContainer from "components/organisms/FramesContainer";
 import ButtonsContainer from "components/organisms/ButtonsContainer";
 import EditorContainer from "components/organisms/EditorContainer";
 
-const Article: React.FC = () => {
+const Main: React.FC = () => {
   return (
-    <article>
-      <EditorContainer />
-      <ButtonsContainer />
-      <FramesContainer />
-    </article>
+    <MainProvider>
+      <main>
+        <EditorContainer />
+        <ButtonsContainer />
+        <FramesContainer />
+      </main>
+    </MainProvider>
   );
 };
 
-export default Article;
+export default Main;

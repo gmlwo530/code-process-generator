@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Header from "components/templates/Header";
 import Footer from "components/templates/Footer";
-import Article from "components/templates/Article";
+import Main from "components/templates/Main";
 
 import "./style.scss";
 
@@ -29,25 +29,6 @@ const HomePage: React.FC = () => {
       "Shift-Tab": "indentLess",
     },
     readOnly: false,
-  };
-
-  const createFrame = () => {
-    let codeEditorInput = document.getElementById(
-      "code-editor-input"
-    ) as HTMLTextAreaElement;
-
-    let descEditorInput = document.getElementById(
-      "description-editor-input"
-    ) as HTMLTextAreaElement;
-
-    setCursor(frameList.length + 1);
-    setFrameList([
-      ...frameList,
-      {
-        code: codeEditorInput.value,
-        description: descEditorInput.value,
-      },
-    ]);
   };
 
   const updateFrame = (idx: number) => {
@@ -81,7 +62,7 @@ const HomePage: React.FC = () => {
   return (
     <div id="home-page" className="pages">
       <Header />
-      <Article />
+      <Main />
       <Footer />
     </div>
   );

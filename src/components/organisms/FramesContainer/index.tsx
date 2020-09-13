@@ -2,8 +2,12 @@ import React from "react";
 import "./style.scss";
 
 import Frame from "components/molecules/Frame";
+import { useMainContext } from "context/MainContext";
 
 const FramesContainer: React.FC = () => {
+  const { state, dispatch } = useMainContext();
+
+  console.log(`Frames Container : ${state.count}`);
   return (
     <div id="frames-container">
       {/* {frameList.map((item, index) => {
