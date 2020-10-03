@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import { getDefaultFrame } from "data";
 import {
   MainContext,
   MainContextState,
@@ -6,18 +7,24 @@ import {
 } from "./MainContext";
 
 const MainProvider = ({ children = <></> }) => {
+  let defaultFrame = getDefaultFrame();
   let initState: MainContextState = {
-    count: 0,
+    frames: [],
+    cursor: 0,
+    code: defaultFrame.code,
+    description: defaultFrame.description,
   };
 
   let reducer = (state: MainContextState, action: MainContextAction) => {
     switch (action.type) {
-      case "update-count":
-        return { ...state, count: action.payload };
       case "update-frames":
-        return { ...state, count: action.payload };
+        return { ...state, frames: action.payload };
       case "update-cursor":
-        return { ...state, count: action.payload };
+        return { ...state, cursor: action.payload };
+      case "update-code":
+        return { ...state, code: action.payload };
+      case "update-description":
+        return { ...state, description: action.payload };
       default:
         return state;
     }

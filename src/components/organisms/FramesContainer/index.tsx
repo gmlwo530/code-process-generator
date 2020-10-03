@@ -1,30 +1,19 @@
 import React from "react";
 import "./style.scss";
 
-import Frame from "components/molecules/Frame";
+import SavedFrame from "components/molecules/SavedFrame";
+import NotSavedFrame from "components/molecules/NotSavedFrame";
 import { useMainContext } from "context/MainContext";
 
 const FramesContainer: React.FC = () => {
-  const { state, dispatch } = useMainContext();
+  const { state } = useMainContext();
 
-  console.log(`Frames Container : ${state.count}`);
   return (
-    <div id="frames-container">
-      {/* {frameList.map((item, index) => {
-              return (
-                <div
-                  className="code-process-item"
-                  key={index}
-                  onClick={() => moveCursor(index)}
-                >
-                  {item.code}-{item.description}
-                  <button onClick={() => removeFrame(index)}>delete</button>
-                </div>
-              );
-            })} */}
-      {[1, 2, 3, 4, 5, 6, 7, 9].map((item, index) => {
-        return <Frame key={index} idx={index} />;
+    <div id="frame-container">
+      {state.frames.map((item, index) => {
+        return <SavedFrame key={index} index={index} code={item.code} />;
       })}
+      <NotSavedFrame index={state.frames.length} code={state.code} />
     </div>
   );
 };

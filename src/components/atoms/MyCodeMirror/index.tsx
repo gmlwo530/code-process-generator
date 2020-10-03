@@ -4,6 +4,8 @@ import "codemirror/mode/go/go.js";
 import "codemirror/mode/javascript/javascript.js";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 
+import { useMainContext } from "context/MainContext";
+
 import "./style.scss";
 
 const options = {
@@ -23,12 +25,15 @@ const options = {
 };
 
 const MyCodeMirror: React.FC = () => {
+  const { state, dispatch } = useMainContext();
+
   return (
     <CodeMirror
-      value={"console.log(20)"}
+      value={state.code}
       options={options}
-      // onBeforeChange={(editor, data, value) => {}}
-      onChange={(editor, data, value) => {}}
+      onChange={(_, __, value) => {
+        dispatch({ type: "update-code", payload: value });
+      }}
     />
   );
 };

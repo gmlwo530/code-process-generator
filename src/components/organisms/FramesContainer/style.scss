@@ -1,6 +1,6 @@
 @import "src/components/_settings/_variables";
 
-#frames-container {
+#frame-container {
   width: 100%;
   background-color: orange;
   display: flex;
@@ -13,7 +13,7 @@
   padding: 1rem;
 }
 
-#frames-container:after {
+#frame-container:after {
   content: "";
   width: 1rem;
   flex-shrink: 0;

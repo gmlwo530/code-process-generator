@@ -4,7 +4,7 @@ import "./style.scss";
 import MainProvider from "context/MainProvider";
 
 import FramesContainer from "components/organisms/FramesContainer";
-import ButtonsContainer from "components/organisms/ButtonsContainer";
+import ToolContainer from "components/organisms/ToolContainer";
 import EditorContainer from "components/organisms/EditorContainer";
 
 const Main: React.FC = () => {
@@ -12,7 +12,7 @@ const Main: React.FC = () => {
     <MainProvider>
       <main>
         <EditorContainer />
-        <ButtonsContainer />
+        <ToolContainer />
         <FramesContainer />
       </main>
     </MainProvider>

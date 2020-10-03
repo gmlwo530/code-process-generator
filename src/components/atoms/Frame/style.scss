@@ -1,9 +1,14 @@
 @import "src/components/_settings/_variables";
 
-.frames {
+.frame {
   margin: 0 10px;
   background-color: white;
   flex-shrink: 0;
   width: 150px;
   height: 150px;
+  font-size: 1px;
+}
+
+.selected-frame {
+  border: 1px solid blue;
 }

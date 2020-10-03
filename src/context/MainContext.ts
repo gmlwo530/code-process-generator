@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Frame } from "data";
 
 interface MainContextAPI {
   state: MainContextState;
@@ -7,20 +8,27 @@ interface MainContextAPI {
 
 export type MainContextAction =
   | {
-      type: "update-count";
-      payload: number;
-    }
-  | {
       type: "update-frames";
-      payload: number;
+      payload: Frame[];
     }
   | {
       type: "update-cursor";
       payload: number;
+    }
+  | {
+      type: "update-code";
+      payload: string;
+    }
+  | {
+      type: "update-description";
+      payload: string;
     };
 
 export interface MainContextState {
-  count: number;
+  frames: Frame[];
+  cursor: number;
+  code: string;
+  description: string;
 }
 
 export const MainContext = React.createContext<MainContextAPI | undefined>(
