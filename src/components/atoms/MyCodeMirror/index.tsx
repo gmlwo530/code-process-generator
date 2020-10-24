@@ -8,7 +8,7 @@ import { useMainContext, isUpdating } from "context/MainContext";
 
 import "./style.scss";
 
-const options = {
+const editorOptions = {
   screenReaderLabel: "Code editor",
   lineNumbers: true,
   firstLineNumber: 1,
@@ -34,9 +34,8 @@ const MyCodeMirror: React.FC = () => {
           ? state.updatedCode
           : state.code
       }
-      options={options}
+      options={editorOptions}
       onChange={(_, __, value) => {
-        console.log(value);
         dispatch({ type: "update-code", payload: value });
       }}
     />

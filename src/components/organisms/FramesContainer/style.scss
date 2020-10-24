@@ -2,7 +2,6 @@
 
 #frame-container {
   width: 100%;
-  background-color: orange;
   display: flex;
   justify-content: flex-start;
 
@@ -11,6 +10,7 @@
   -webkit-overflow-scrolling: touch;
 
   padding: 1rem;
+  border-top: 1px solid #e3e3e3;
 }
 
 #frame-container:after {

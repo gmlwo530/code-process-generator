@@ -1,6 +1,11 @@
 import React from "react";
 
+import "codemirror/mode/go/go.js";
+import "codemirror/mode/javascript/javascript.js";
+import { UnControlled as CodeMirror } from "react-codemirror2";
+
 import { useMainContext } from "context/MainContext";
+
 import "./style.scss";
 
 interface FrameProps {
@@ -8,6 +13,22 @@ interface FrameProps {
   code: string;
   isSaved?: boolean;
 }
+
+const frameOptions = {
+  screenReaderLabel: "Code frame",
+  lineNumbers: true,
+  firstLineNumber: 1,
+  mode: "javascript",
+  theme: "material",
+  scrollBarStyle: null,
+  viewportMargin: Infinity,
+  lineWrapping: true,
+  smartIndent: true,
+  extraKeys: {
+    "Shift-Tab": "indentLess",
+  },
+  readOnly: true,
+};
 
 const Frame: React.FC<FrameProps> = ({ index, code, isSaved = true }) => {
   const { state, dispatch } = useMainContext();
@@ -24,7 +45,7 @@ const Frame: React.FC<FrameProps> = ({ index, code, isSaved = true }) => {
       }`}
       onClick={() => moveCursor(index)}
     >
-      {code}
+      <CodeMirror value={code} options={frameOptions} />
     </div>
   );
 };

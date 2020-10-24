@@ -7,7 +7,6 @@ import Button from "components/atoms/Button";
 
 const ButtonLayout: React.FC = () => {
   const { state, dispatch } = useMainContext();
-  console.log(state);
 
   const saveFrame = () => {
     let newFrame: Frame = {
@@ -32,9 +31,38 @@ const ButtonLayout: React.FC = () => {
     dispatch({ type: "update-frames", payload: [...currentFrames] });
   };
 
+  const downloadMarkdown = () => {
+    let text = "";
+    for (let frame of state.frames) {
+      text += `\`\`\`javascript
+${frame.code}
+\`\`\`
+      `;
+    }
+
+    let now = new Date();
+
+    let downloadAnchor = document.createElement("a");
+    downloadAnchor.setAttribute(
+      "href",
+      "data:text/markdown;charset=utf-8," + encodeURIComponent(text)
+    );
+    downloadAnchor.setAttribute(
+      "download",
+      `code_${now.getFullYear()}${now.getMonth()}${now.getDay()}${now.getHours()}${now.getMinutes()}${now.getSeconds()}.md`
+    );
+
+    downloadAnchor.style.display = "none";
+    document.body.appendChild(downloadAnchor);
+
+    downloadAnchor.click();
+
+    document.body.removeChild(downloadAnchor);
+  };
+
   return (
     <div id="button-layout">
-      <Button name="Download" onClick={saveFrame} />
+      <Button name="Download" onClick={downloadMarkdown} />
       {state.cursor === state.frames.length ? (
         <Button name="Save" onClick={saveFrame} />
       ) : (
