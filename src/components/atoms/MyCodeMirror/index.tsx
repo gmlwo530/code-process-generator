@@ -4,7 +4,7 @@ import "codemirror/mode/go/go.js";
 import "codemirror/mode/javascript/javascript.js";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 
-import { useMainContext } from "context/MainContext";
+import { useMainContext, isUpdating } from "context/MainContext";
 
 import "./style.scss";
 
@@ -29,9 +29,14 @@ const MyCodeMirror: React.FC = () => {
 
   return (
     <CodeMirror
-      value={state.code}
+      value={
+        isUpdating(state.frames.length, state.cursor)
+          ? state.updatedCode
+          : state.code
+      }
       options={options}
       onChange={(_, __, value) => {
+        console.log(value);
         dispatch({ type: "update-code", payload: value });
       }}
     />

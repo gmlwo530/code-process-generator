@@ -3,7 +3,7 @@ import "./style.scss";
 
 import SavedFrame from "components/molecules/SavedFrame";
 import NotSavedFrame from "components/molecules/NotSavedFrame";
-import { useMainContext } from "context/MainContext";
+import { useMainContext, isUpdating } from "context/MainContext";
 
 const FramesContainer: React.FC = () => {
   const { state } = useMainContext();
@@ -11,7 +11,18 @@ const FramesContainer: React.FC = () => {
   return (
     <div id="frame-container">
       {state.frames.map((item, index) => {
-        return <SavedFrame key={index} index={index} code={item.code} />;
+        return (
+          <SavedFrame
+            key={index}
+            index={index}
+            code={
+              isUpdating(state.frames.length, state.cursor) &&
+              index === state.cursor
+                ? state.updatedCode
+                : item.code
+            }
+          />
+        );
       })}
       <NotSavedFrame index={state.frames.length} code={state.code} />
     </div>

@@ -22,6 +22,10 @@ export type MainContextAction =
   | {
       type: "update-description";
       payload: string;
+    }
+  | {
+      type: "delete-frame";
+      payload: number;
     };
 
 export interface MainContextState {
@@ -29,6 +33,7 @@ export interface MainContextState {
   cursor: number;
   code: string;
   description: string;
+  updatedCode: string;
 }
 
 export const MainContext = React.createContext<MainContextAPI | undefined>(
@@ -41,4 +46,8 @@ export const useMainContext = () => {
     throw new Error("useMainContext must be used within a MainProvider");
   }
   return context;
+};
+
+export const isUpdating = (frameLength: number, cursor: number): boolean => {
+  return frameLength !== cursor;
 };

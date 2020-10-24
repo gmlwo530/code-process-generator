@@ -11,6 +11,7 @@ interface FrameProps {
 
 const Frame: React.FC<FrameProps> = ({ index, code, isSaved = true }) => {
   const { state, dispatch } = useMainContext();
+
   const moveCursor = (index: number) => {
     dispatch({ type: "update-cursor", payload: index });
   };

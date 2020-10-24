@@ -17,13 +17,14 @@ const ButtonLayout: React.FC = () => {
 
     dispatch({ type: "update-frames", payload: [...state.frames, newFrame] });
     dispatch({ type: "update-cursor", payload: state.cursor + 1 });
+    dispatch({ type: "update-code", payload: "" });
   };
 
   const updateFrame = () => {
     let currentFrames: Frame[] = state.frames;
     let newFrame: Frame = {
-      code: state.code,
-      description: state.description,
+      code: state.updatedCode,
+      description: "",
     };
 
     currentFrames[state.cursor] = newFrame;

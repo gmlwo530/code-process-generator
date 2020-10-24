@@ -1,0 +1,32 @@
+@import "src/components/_settings/_variables";
+
+.delete-button {
+  $horizontal-length: -10px;
+  $vertical-length: -10px;
+  $blur-radius: 30px;
+  $spread-radius: -4px;
+  $shadow-color: rgba(163, 163, 163, 0.69);
+
+  display: inline-flex;
+  background-color: #fff;
+  position: absolute;
+  -webkit-box-shadow: $horizontal-length $vertical-length $blur-radius
+    $spread-radius $shadow-color;
+  -moz-box-shadow: $horizontal-length $vertical-length $blur-radius
+    $spread-radius $shadow-color;
+  box-shadow: $horizontal-length $vertical-length $blur-radius $spread-radius
+    $shadow-color;
+
+  width: 30px;
+  height: 30px;
+
+  right: -5px;
+  top: -15px;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  border: 1px solid #a3a3a3;
+}

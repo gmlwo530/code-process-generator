@@ -4,16 +4,19 @@ Code Process Generator is generator that generates a markdown of the process of 
 
 ## Doing
 
-- [ ] Save code
-- [ ] Edit code
-- [ ] Save frame
-- [ ] Edit frame
+- [x] Save code
+- [x] Edit code
+- [x] Save frame
+- [x] Edit frame
 - [ ] Delete frame
 - [ ] Generate markdown
-- [ ] Header & Footer
+- [ ] Refactoring UI
+- [ ] Hosting
+- [ ] Edit readme
+- [x] Header & Footer
 
 ## TODO
 
-- [ ] Languages
+- [ ] Programming languages
 - [ ] Description editor for code
 - [ ] Themes
