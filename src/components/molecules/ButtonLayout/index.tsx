@@ -36,8 +36,7 @@ const ButtonLayout: React.FC = () => {
     for (let frame of state.frames) {
       text += `\`\`\`javascript
 ${frame.code}
-\`\`\`
-      `;
+\`\`\`\n\n`;
     }
 
     let now = new Date();

@@ -2,9 +2,13 @@ import React from "react";
 import "./style.scss";
 import MyCodeMirror from "components/atoms/MyCodeMirror";
 
-const CodeEditor: React.FC = () => {
+interface CodeEditorProps {
+  parentHeight: number;
+}
+
+const CodeEditor: React.FC<CodeEditorProps> = ({ parentHeight }) => {
   return (
-    <div id="code-editor">
+    <div id="code-editor" style={{ height: `${parentHeight}px` }}>
       <MyCodeMirror />
     </div>
   );

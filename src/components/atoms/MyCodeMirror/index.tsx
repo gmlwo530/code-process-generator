@@ -2,7 +2,7 @@ import React from "react";
 
 import "codemirror/mode/go/go.js";
 import "codemirror/mode/javascript/javascript.js";
-import { UnControlled as CodeMirror } from "react-codemirror2";
+import { Controlled as CodeMirror } from "react-codemirror2";
 
 import { useMainContext, isUpdating } from "context/MainContext";
 
@@ -35,9 +35,11 @@ const MyCodeMirror: React.FC = () => {
           : state.code
       }
       options={editorOptions}
-      onChange={(_, __, value) => {
+      onBeforeChange={(editor, data, value) => {
         dispatch({ type: "update-code", payload: value });
       }}
+      onChange={(_, __, value) => {}}
+      autoScroll={true}
     />
   );
 };
