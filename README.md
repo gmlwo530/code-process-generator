@@ -24,11 +24,13 @@
 
   <p align="center">
     Code Process Generator is generator that generates a markdown of the process of the code.
+    (This project is under development. If you find a bug, please report it to the issue.)
+    <br />
     <br />
     <a href="https://github.com/gmlwo530/code-process-generator"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://gmlwo530.github.io/code-process-generator/">View Demo</a>
     ·
     <a href="https://github.com/gmlwo530/code-process-generator/issues">Report Bug</a>
     ·
@@ -144,7 +146,7 @@ CHOI HEE JAE - [@gmlwo530](https://github.com/gmlwo530) - gmlwo530@gmail.com
 - [Type script](https://www.typescriptlang.org/)
 - [GitHub Pages](https://pages.github.com)
 
-[contributors-shield]: https://img.shields.io/github/contributors/ogmlwo530/code-process-generator.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/gmlwo530/code-process-generator.svg?style=for-the-badge
 [contributors-url]: https://github.com/gmlwo530/code-process-generator/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/gmlwo530/code-process-generator.svg?style=for-the-badge
 [forks-url]: https://github.com/gmlwo530/code-process-generator/network/members
@@ -153,4 +155,4 @@ CHOI HEE JAE - [@gmlwo530](https://github.com/gmlwo530) - gmlwo530@gmail.com
 [issues-shield]: https://img.shields.io/github/issues/gmlwo530/code-process-generator.svg?style=for-the-badge
 [issues-url]: https://github.com/gmlwo530/code-process-generator/issues
 [license-shield]: https://img.shields.io/github/license/gmlwo530/code-process-generator.svg?style=for-the-badge
-[license-url]: https://github.com/gmlwo530/ode-process-generator/blob/master/LICENSE
+[license-url]: https://github.com/gmlwo530/code-process-generator/blob/master/LICENSE
