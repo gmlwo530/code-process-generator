@@ -14,11 +14,10 @@ const SavedFrame: React.FC<SavedFrameProps> = ({ index, code }) => {
   const [deleteButtonOpen, setDeleteButtonOpen] = useState(false);
 
   const removeFrame = (e: React.MouseEvent) => {
-    // if (window.confirm("Are you sure you want to delete")) {
-    e.stopPropagation();
-    console.log("Delete!");
-    dispatch({ type: "delete-frame", payload: index });
-    // }
+    if (window.confirm("Are you sure you want to delete??")) {
+      e.stopPropagation();
+      dispatch({ type: "delete-frame", payload: index });
+    }
   };
 
   return (

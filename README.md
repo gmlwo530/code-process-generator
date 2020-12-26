@@ -8,8 +8,8 @@ Code Process Generator is generator that generates a markdown of the process of 
 - [x] Edit code
 - [x] Save frame
 - [x] Edit frame
-- [ ] Delete frame
-- [ ] Generate markdown
+- [x] Delete frame
+- [x] Generate markdown
 - [ ] Refactoring UI
 - [ ] Hosting
 - [ ] Edit readme

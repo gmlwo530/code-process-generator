@@ -2,7 +2,15 @@
 @import "codemirror/lib/codemirror.css";
 @import "codemirror/theme/material.css";
 
-.react-codemirror2,
+.react-codemirror2 {
+  height: 100%;
+}
+
 .CodeMirror-wrap {
   height: 100%;
+  font-size: 17px;
+}
+
+.frame .CodeMirror-wrap {
+  font-size: 7px;
 }
