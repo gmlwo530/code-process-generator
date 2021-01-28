@@ -4,3 +4,7 @@ logs
 
 node_modules
 build
+
+.env
+.env.dev
+.env.prod
