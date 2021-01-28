@@ -14,21 +14,28 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2.1.2
         with:
-          node-version: '12.x'
+          node-version: "12.x"
 
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
-          path: ~/.npm
+          path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-            
+            ${{ runner.os }}-
+
       - name: Install dependencies
         run: npm install
 
-#       - run: npm ci
-      - run: npm run build
+      - name: Make env file
+        run: |
+          touch .env
+          echo REACT_APP_MODE=prod >> .env
+          echo REACT_APP_GA_ID=${{ secrets.REACT_APP_GA_ID }} >> .env
+
+      - name: Build app
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
