@@ -34,7 +34,7 @@
   },
   "scripts": {
     "start": "cp ./.env.dev ./.env && webpack-dev-server --mode development --config webpack.config.js --open --hot",
-    "build": "cp ./.env.dev ./.env webpack --mode production --config webpack.config.js"
+    "build": "cp ./.env.dev ./.env && webpack --mode production --config webpack.config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
