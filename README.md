@@ -72,7 +72,7 @@
 
 This project make process of your code to markdown file. Whenever I took a programming class, I faced a common problem. At the end of the lecture, only one code containing the subject of the lecture remains, and there are no steps left to create this result.
 
-So, i make this project to remain steps of result.
+So, I make this project to remain steps of result.
 
 Now, CPG(code process generator) support only javascript. I plan to support other languages ​​as soon as possible.
 
